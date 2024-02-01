@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.container-general {
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #2114d1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img-style {
+  border-radius: 50%;
+}
+
+.search-container {
+  text-align: center;
+}
+
+.boton-buscar {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-info {
+  list-style: none;
+  padding: 0;
+}
+
+.weather-info li {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ciudades-guardadas {
+  margin-top: 20px;
+}
+
+.ciudades-guardadas p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.ciudades-guardadas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ciudades-guardadas li {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}

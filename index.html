@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clima App</title>
+  <script type="module" src="/index.js"></script>
+  <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-general">
+    <div class="container-principal">
+      <!-- <img id="imagen" class="img-style"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVexVy2WFnZcUKBx5-17MviqMGUty-ptLtQ&usqp=CAU" /> -->
+      <img id="logo-ciudad" class="img-style" src="" alt="">
+      <div class=" search-container">
+        <input id="city" type="text" placeholder="Ingrese ciudad">
+        <br>
+        <button class="boton-buscar" id="botonBuscar">Buscar</button>
+      </div>
+    </div>
+    <div class="container">
+      <h3 id="t0"></h3>
+      <ul class="weather-info">
+        <li id="t1"></li>
+        <li id="t2"></li>
+        <li id="t3"></li>
+        <li id="t4"></li>
+      </ul>
+      <button id="guardar" disabled>Guardar ciudad</button>
+      <div class="ciudades-guardadas">
+        <p>Mis ciudades guardadas:</p>
+        <ul id="list-cities"></ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
