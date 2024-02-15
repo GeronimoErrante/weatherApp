@@ -9,16 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     else {
       fetchData(inputCity.value).then((data) => {
-        saveCity.addEventListener("click", () => {
-          guardarCiudad(data);
-          data = null;
-        });
+        console.log(data);
+        localStorage.setItem("ciudad", data.name);
+        mostrarCiudad(data);
+        saveCity.disabled = false;
       })
     }
-  })
+  });
 
+  saveCity.addEventListener("click", () => {
+    guardarCiudad();
+  });
 
-})
+});
 
 export function cargarTiempo() {
   const tiempo = {
@@ -53,11 +56,65 @@ export async function fetchData(cityName) {
 
 }
 
-export function guardarCiudad(city) {
-  const list = document.getElementById("list-cities")
-  const $li = document.createElement("li");
-  $li.textContent = city.name;
-  list.appendChild($li);
+export function guardarCiudad() {
+  const list = document.getElementById("list-cities");
+  const cityName = localStorage.getItem("ciudad");
+
+  if (!elementoExisteEnLista(cityName)) {
+    // Crear un contenedor de fila
+    const $filaBotones = document.createElement("div");
+    $filaBotones.classList.add("fila-botones");
+
+    // Crear botón principal
+    const $button = document.createElement("button");
+    $button.setAttribute("class", "btn-style");
+    $button.textContent = cityName[0].toUpperCase() + cityName.substring(1).toLowerCase();
+
+    // Crear botón de eliminación
+    const $deleteButton = document.createElement("button");
+    $deleteButton.setAttribute("class", "dlt-button");
+    const $img = document.createElement("img");
+    $img.setAttribute("src", "./logos/basura.png");
+    $img.setAttribute("class", "delete-img");
+    $deleteButton.appendChild($img);
+
+
+    // Agregar botones al contenedor de fila
+    $filaBotones.appendChild($button);
+    $filaBotones.appendChild($deleteButton);
+
+    // Agregar la fila al contenedor principal
+    list.appendChild($filaBotones);
+
+    $deleteButton.addEventListener("click", () => {
+      list.removeChild($filaBotones)
+
+    })
+    // Agregar evento al botón principal
+    $button.addEventListener("click", () => {
+      fetchData($button.textContent);
+    });
+  } else {
+    alert("La ciudad ya se encuentra guardada");
+  }
+}
+
+
+
+
+function elementoExisteEnLista(nombreCiudad) {
+  const lista = document.getElementById("list-cities");
+  if (lista.childElementCount > 0) {
+    const elementosLi = lista.getElementsByTagName("button");
+    for (let i = 0; i < elementosLi.length; i++) {
+      if (elementosLi[i].textContent.toLowerCase() === nombreCiudad.toLowerCase()) {
+        return true;
+      }
+    }
+  }
+  console.log(lista.childElementCount)
+
+  return false;
 }
 
 export function mostrarCiudad(data) {
@@ -96,7 +153,7 @@ export function cargarLogo(city) {
   const horaAux = new Date(`01 ${hora}`)
   let act = "dia";
   console.log(horaAux.getHours())
-  if (horaAux.getHours() >= 22 || horaAux.getHours() <= 9)
+  if (horaAux.getHours() >= 21 || horaAux.getHours() <= 9)
     act = "noche";
   console.log(act);
   elegirLogo(clima, act);
