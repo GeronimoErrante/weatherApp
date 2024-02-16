@@ -37,32 +37,41 @@ body {
 
 .container-principal {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-flow: column;
-  justify-content: center;
   background-color: #2114d1;
-  padding: 20px;
   height: 50vh;
   width: 50vh;
   border-radius: 10px;
   box-shadow: 5px 5px 50px rgba(0, 0, 0, 20);
+  margin-right: 50px;
 }
 
 .img-style {
+  margin-left: 40px;
   width: 30vh;
   height: 30vh;
   object-fit: contain;
 }
 
 .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
+.buscador{
+  font-family: 'Ubuntu';
+  height: 35px;
+}
+
 .boton-buscar {
+  font-family: 'Ubuntu';
+  height: 41px;
   padding: 10px;
-  font-size: 16px;
   cursor: pointer;
-  margin-top: 0.5rem;
 }
 
 .container {
