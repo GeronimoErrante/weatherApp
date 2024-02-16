@@ -140,7 +140,7 @@ export function mostrarCiudad(data) {
 export function obtenerHorario(city) {
   const fechaActual = new Date();
   const dif = city.timezone;
-  fechaActual.setMilliseconds(fechaActual.getMilliseconds() + dif * 1000);
+  fechaActual.setMilliseconds(fechaActual.getMilliseconds() + dif * 1000 + (10800000));
   const horaActual = fechaActual.toLocaleTimeString();
   return horaActual;
 
@@ -153,7 +153,7 @@ export function cargarLogo(city) {
   const horaAux = new Date(`01 ${hora}`)
   let act = "dia";
   console.log(horaAux.getHours())
-  if (horaAux.getHours() >= 21 || horaAux.getHours() <= 9)
+  if (horaAux.getHours() > 19 || horaAux.getHours() <= 6)
     act = "noche";
   console.log(act);
   elegirLogo(clima, act);
