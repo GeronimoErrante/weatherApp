@@ -6,10 +6,9 @@ body {
 }
 
 .btn-style {
+  cursor: pointer;
   font-family: 'Ubuntu';
   border-radius: 5%;
-  background-color: #a3d3f3;
-  padding: 5px;
 }
 
 .container-general {
@@ -26,6 +25,7 @@ body {
 }
 
 .dlt-button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,15 +76,30 @@ body {
 
 .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
   padding: 20px;
   height: 80vh;
   width: 80vh;
-  justify-content: center;
-  flex-flow: column;
-  align-items: center;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 5px 5px 50px rgba(0, 0, 0, 20);
+}
+
+.city-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2114d1;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 20);
 }
 
 .weather-info {
@@ -92,11 +107,17 @@ body {
   padding: 0;
 }
 
-
 .weather-info li {
   font-size: 18px;
-  color: #333;
+  color: #fff;
   margin-bottom: 10px;
+}
+
+.save-button {
+  cursor: pointer;
+  font-family: 'Ubuntu';
+  height: 41px;
+  padding: 10px;
 }
 
 .ciudades-guardadas {
@@ -110,20 +131,17 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-
 }
 
 .ciudades-guardadas div {
-  margin-top: 10px;
   display: flex;
-
+  margin-top: 10px;
 }
 
 .ciudades-guardadas p {
   font-size: 16px;
   margin-bottom: 10px;
 }
-
 
 .header-style {
   background-color: #3498dbc7;
