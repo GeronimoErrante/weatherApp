@@ -53,7 +53,6 @@ export async function fetchData(cityName) {
   catch (error) {
     console.error(error)
   }
-
 }
 
 export function guardarCiudad() {
@@ -78,7 +77,6 @@ export function guardarCiudad() {
     $img.setAttribute("class", "delete-img");
     $deleteButton.appendChild($img);
 
-
     // Agregar botones al contenedor de fila
     $filaBotones.appendChild($button);
     $filaBotones.appendChild($deleteButton);
@@ -88,8 +86,8 @@ export function guardarCiudad() {
 
     $deleteButton.addEventListener("click", () => {
       list.removeChild($filaBotones)
-
     })
+
     // Agregar evento al botón principal
     $button.addEventListener("click", () => {
       fetchData($button.textContent);
@@ -98,9 +96,6 @@ export function guardarCiudad() {
     alert("La ciudad ya se encuentra guardada");
   }
 }
-
-
-
 
 function elementoExisteEnLista(nombreCiudad) {
   const lista = document.getElementById("list-cities");
@@ -131,7 +126,6 @@ export function mostrarCiudad(data) {
   parrafo3.textContent = "Temperatura máxima: " + data.main.temp_max + " °C";
   parrafo4.textContent = "Sensación térmica: " + data.main.feels_like + " °C";
 
-
   let boton_guardar = document.getElementById("guardar")
   boton_guardar.disabled = false;
   boton_guardar.textContent = "Guardar ciudad"
@@ -143,7 +137,6 @@ export function obtenerHorario(city) {
   fechaActual.setMilliseconds(fechaActual.getMilliseconds() + dif * 1000 + (10800000));
   const horaActual = fechaActual.toLocaleTimeString();
   return horaActual;
-
 }
 
 export function cargarLogo(city) {
@@ -163,6 +156,4 @@ export function elegirLogo(clima, act) {
   let logo = document.getElementById("logo-ciudad");
   const tiempo = cargarTiempo();
   logo.setAttribute("src", tiempo[act][clima])
-
 }
-
